@@ -228,10 +228,10 @@ img {
   background-color: #85144b !important;
 }
 .bg-imagen {
-  background-image:url(../img/blur-background04.jpg) !important;
-     background-repeat: no-repeat;
-    -moz-background-size: cover;
+  background-image: url(../img/fondo1.png);
     -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
 }
 /* Text colors */
