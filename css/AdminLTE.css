@@ -50,6 +50,7 @@ body > .header {
 }
 /* Define 2 column template */
 .right-side,
+.normal-side,
 .left-side {
   min-height: 100%;
   display: block;
@@ -58,6 +59,10 @@ body > .header {
 .right-side {
   background-color: #f9f9f9;
   margin-left: 220px;
+}
+.normal-side
+{
+ background-color: #f9f9f9;
 }
 /*left side - contains sidebar*/
 .left-side {
@@ -76,14 +81,25 @@ body > .header {
   .right-side.strech > .content-header {
     margin-top: 0px;
   }
+  /*Right side strech mode*/
+  .normal-side.strech {
+    margin-left: 0;
+  }
+  .normal-side.strech > .content-header {
+    margin-top: 0px;
+  }
   /* Left side collapse */
   .left-side.collapse-left {
+   -webkit-transition: all 0.3s;
     left: -220px;
   }
 }
 /*Give content full width on xs screens*/
 @media screen and (max-width: 992px) {
   .right-side {
+    margin-left: 0;
+  }
+  .normal-side {
     margin-left: 0;
   }
 }
@@ -313,6 +329,9 @@ img {
   .right-side {
     margin: 0;
   }
+  .normal-side {
+    margin: 0;
+  }
 }
 /* Remove border radius */
 .flat {
@@ -487,6 +506,7 @@ body > .header .navbar .sidebar-toggle {
   -webkit-border-radius: 0 !important;
   -moz-border-radius: 0 !important;
   border-radius: 0 !important;
+  -webkit-transition: all 0.3s;
 }
 body > .header .navbar .sidebar-toggle:hover .icon-bar {
   background: #f6f6f6;
@@ -583,8 +603,58 @@ body > .header .logo .icon {
 .right-side > .content-header > .breadcrumb > li + li:before {
   content: '>\00a0';
 }
+
+/*------ CLASE CREADAS ------------------------*/
+.normal-side > .content-header {
+  position: relative;
+  padding: 15px 15px 10px 20px;
+}
+.normal-side > .content-header > h1 {
+  margin: 0;
+  font-size: 24px;
+}
+.normal-side > .content-header > h1 > small {
+  font-size: 15px;
+  display: inline-block;
+  padding-left: 4px;
+  font-weight: 300;
+}
+.normal-side > .content-header > .breadcrumb {
+  float: right;
+  background: transparent;
+  margin-top: 0px;
+  margin-bottom: 0;
+  font-size: 12px;
+  padding: 7px 5px;
+  position: absolute;
+  top: 15px;
+  right: 10px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+.normal-side > .content-header > .breadcrumb > li > a {
+  color: #444;
+  text-decoration: none;
+}
+.normal-side > .content-header > .breadcrumb > li > a > .fa,
+.normal-side > .content-header > .breadcrumb > li > a > .glyphicon,
+.normal-side > .content-header > .breadcrumb > li > a > .ion {
+  margin-right: 5px;
+}
+.normal-side > .content-header > .breadcrumb > li + li:before {
+  content: '>\00a0';
+}
 @media screen and (max-width: 767px) {
   .right-side > .content-header > .breadcrumb {
+    position: relative;
+    margin-top: 5px;
+    top: 0;
+    right: 0;
+    float: none;
+    background: #efefef;
+  }
+  .normal-side > .content-header > .breadcrumb {
     position: relative;
     margin-top: 5px;
     top: 0;
@@ -1137,6 +1207,7 @@ body > .header .logo .icon {
 -----------------------------------------------------------------
 */
 .form-control {
+	font-size:14px;
   -webkit-border-radius: 0px !important;
   -moz-border-radius: 0px !important;
   border-radius: 0px !important;
@@ -2597,6 +2668,11 @@ Component: timeline
   background: #fbfbfb;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
+/* skin-blue content header */
+.skin-blue .normal-side > .content-header {
+  background: #fbfbfb;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
 /* Skin-blue user panel */
 .skin-blue .user-panel > .image > img {
   border: 1px solid #dfdfdf;
@@ -2745,6 +2821,10 @@ Component: timeline
 }
 /* skin-black content header */
 .skin-black .right-side > .content-header {
+  background: transparent;
+  box-shadow: none;
+}
+.skin-black .normal-side > .content-header {
   background: transparent;
   box-shadow: none;
 }
